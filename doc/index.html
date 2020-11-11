@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- style="--siteFont:PT Sans; --defaultTheme:dark; --codeFontFamily:Roboto Mono, Monaco, courier, monospace;
+  --bodyFontSize:15px; --accent:#42b983; --toogleBackground:#ffffff; --background:#091a28; --textColor:#b4b4b4;
+  --codeTextColor:#ffffff; --codeBackgroudColor:#0e2233; --borderColor:#0d2538; --blockQuoteColor:#858585;
+  --highlightColor:#d22778; --sidebarSublink:#b4b4b4; --codeTypeColor:#ffffff; --coverBackground:linear-gradient(to left
+  bottom, hsl(118, 100%, 85%) 0%,hsl(181, 100%, 85%) 100%);
+  --toogleImage:url(https\:\/\/cdn\.jsdelivr\.net\/npm\/docsify-darklight-theme\@latest\/icons\/sun\.svg);
+  --blockQuoteColour:#858585;" -->
+
+<head>
+  <meta charset=" UTF-8">
+  <title>Amazing Document</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css"> -->
+  <link rel="icon" href="media/icon.svg">
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/buble.css"> -->
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/dark.css"> -->
+  <!-- <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/pure.css"> -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/dolphin.css">
+  <style>
+    /* .sidebar {
+      padding-top: 0;
+    }
+
+    .search {
+      margin-bottom: 20px;
+      padding: 6px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .search .input-wrap {
+      display: flex;
+      align-items: center;
+    }
+
+    .search .results-panel {
+      display: none;
+    }
+
+    .search .results-panel.show {
+      display: block;
+    }
+
+    .search input {
+      outline: none;
+      border: none;
+      width: 100%;
+      padding: 0 7px;
+      line-height: 36px;
+      font-size: 14px;
+      border: 1px solid transparent;
+    }
+
+    .search input:focus {
+      box-shadow: 0 0 5px var(--theme-color, #42b983);
+      border: 1px solid var(--theme-color, #42b983);
+    }
+
+    .search input::-webkit-search-decoration,
+    .search input::-webkit-search-cancel-button,
+    .search input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    .search .clear-button {
+      cursor: pointer;
+      width: 36px;
+      text-align: right;
+      display: none;
+    }
+
+    .search .clear-button.show {
+      display: block;
+    }
+
+    .search .clear-button svg {
+      transform: scale(.5);
+    }
+
+    .search h2 {
+      font-size: 17px;
+      margin: 10px 0;
+    }
+
+    .search a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .search .matching-post {
+      border-bottom: 1px solid #eee;
+    }
+
+    .search .matching-post:last-child {
+      border-bottom: 0;
+    }
+
+    .search p {
+      font-size: 14px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .search p.empty {
+      text-align: center;
+    }
+
+    .app-name.hide,
+    .sidebar-nav.hide {
+      display: none;
+    } */
+
+    /* 侧边栏一级标题 */
+    .sidebar-nav>ul>li>p {
+      font-size: 22px;
+      padding: 10px;
+    }
+
+    /* 侧边栏二级标题 */
+    .sidebar ul li p>a {
+      font-size: 16px;
+      padding-left: 40px;
+      font-weight: 600;
+    }
+
+    .sidebar ul li a {
+      font-size: 16px;
+      /* padding-left: 40px; */
+      font-weight: 600;
+    }
+
+    /* 侧边栏的文档标题 */
+    .sidebar .app-name a {
+      font-size: 30px;
+      font-weight: 700;
+      margin: 40px 0;
+    }
+
+    /* 最小级的标题 */
+    .app-sub-sidebar li>.section-link {
+      font-size: 14px;
+    }
+
+    .app-sub-sidebar>li {
+      margin-left: 40PX;
+    }
+
+    .ready section.cover {
+      padding-left: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <nav>
+    <a href="#/">EN</a>
+    <a href="#/zh-cn/">中文</a>
+  </nav> -->
+  <div id="app">Please Wait...</div>
+  <button>黑暗白夜</button>
+
+  <!-- <script>
+    window.$docsify = {
+      name: '小周文档',
+      repo: '小周文档',
+      loadSidebar: true,//定制自己的侧边栏
+      // 嵌套侧边栏
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
+      },
+      coverpage: true,//开启封面渲染的功能,
+      maxLevel: 4,//支持4级渲染的标题层级
+    }
+  </script> -->
+  <!-- 引入配置文件 -->
+  <script src="./config.js"></script>
+  <!-- 引入vue -->
+  <script src="//cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <!-- 提供字数统计  -->
+  <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+  <!-- 开启全局搜索 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <!-- 可以复代码 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+  <!-- 离线模式配置 -->
+  <script>
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('sw.js')
+    }
+  </script>
+  <!-- 引入自己写入的一些操作 -->
+  <script src='./index.js'></script>
+</body>
+
+</html>
