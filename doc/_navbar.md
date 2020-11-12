@@ -1,9 +1,17 @@
-- 主 🐮 页
+<ul id="nav">
+  <li><a href="#/README.md" id="home">主🐮页</a></li>
+  <li><a  id="aixin">点❤️赞</a></li>
+</ul>
 
-  - [amazing horse](README.md)
-
-- 点 ❤️ 赞
-
-  - [amazing horse](README.md)
-
-  <button id="test">点我切换模式</button>
+<style>
+  #nav li a {
+    font-size:18px;
+    position:fixed;
+    top:16px;
+    right:10px;
+    width:62px;
+  }
+   #nav #home {
+    right:100px;
+  }
+</style>

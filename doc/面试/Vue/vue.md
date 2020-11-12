@@ -1,30 +1,34 @@
 ## 1. V-SHOW 和 V-IF 的区别？
 
-<font size=4>v-show 是对元素的 display 属性进行操作,最终控制元素是否显示.不管元素是否显示,该元素节点都会一直存在于 dom 结构上,v-if 是条件渲染,虽然同是控制显示和影藏,但是属性值为 false 的话,该元素之间在 dom 节点中消失.
+<font size=4>&emsp;&emsp;v-show 是对元素的 display 属性进行操作,最终控制元素是否显示.不管元素是否显示,该元素节点都会一直存在于 dom 结构上
+
+&emsp;&emsp;v-if 是条件渲染,虽然同是控制显示和影藏,但是属性值为 false 的话,该元素之间在 dom 节点中是不存在的.
 </font>
 
 ## 2. 常用的事件指令有哪些？
 
 <font size=4>
 
-- v-if ,v-else-if,v-else
-- v-show
-- v-model
-- v-bind
-- v-html、v-text
-- v-for
-- v-on
+<ul style="font-size:20px">
+<li>v-if ,v-else-if,v-else (v-if条件渲染指令,可以单独使用,但是v-else-if和v-else都需要配合v-if使用才可以)</li>
+<li>v-show (控制元素的显示与隐藏,本质就是控制display属性)</li>
+<li>v-model (双向数据绑定)</li>
+<li>v-bind (强制数据绑定,传入动态数据)</li>
+<li>v-html、v-text (相当于innerHtml和innerText)</li>
+<li>v-for (可以对数据进行遍历,每一个遍历的元素需要加上唯一的key)</li>
+<li>v-on (事件指令)</li>
+</ul>
 
 ## 3. 组件中 DATA 为什么使用函数，不使用对象？什么时候可以使用对象？
 
 <font size=4>
-&emsp;&emsp;每一个组件都是vue的实例,组件共享data属性,会有多个组件会被同时使用,我们的data属性只有绑定到一个公共的对象上才能访问到.当data属性值指向同一个引用类型的时候,如果在一个组件实例上改变对应的data数据,那么另外一个组件也会被改变.所以我们应该使用函数,每一个实例组件改变只会改变自己组件的data值,不会影响其他组件.
+&emsp;&emsp;每一个组件都是vue的实例,组件共享data属性,会有多个组件会被同时使用,我们的data属性只有绑定到一个公共的对象上才能访问到.当data属性值指向同一个引用类型的时候,如果在一个组件实例上改变对应的data数据,那么另外一个组件也会被改变.所以我们应该使用函数,函数内部返回一个对象.每一个实例组件改变只会改变自己组件的data值,不会影响其他组件.
 
-&emsp;&emsp;我们在使用 new Vue() 的时候,我们设置对象或者函数都是可以的,因为 new Vue 的方式是生成一个跟组件,该组件不会被调用.也就不存在共享 data 的情况了.我们如果在一个组件只使用一次的时候,也可以使用对象的形式,但是这种做法很冒险.
+&emsp;&emsp;我们在使用 new Vue() 的时候,我们设置对象或者函数都是可以的,因为 new Vue 的方式是生成一个根组件,该组件不会被调用.也就不存在共享 data 的情况了.我们如果在一个组件只使用一次的时候,也可以使用对象的形式,但是这种做法很冒险.
 
 ## 4. KEEP-ALIVE 组件有什么作用？
 
-&emsp;&emsp;我们在组件切换的时候,保存一些组件的状态防止多次渲染,通俗来说就是缓存组件,我们就可以使用 keep-alive 组件包裹对应组件,这个组件拥有两个自己的生命周期钩子函数,分别为 activeted 和 deactivated,前者相当于 created,后者相当于 destoryed.如果我们想销毁被包裹 的组件,使用 destory 不会被销毁的.我们需要在 deactiavted 钩子函数中调用.命中缓存渲染后会触发 actived 钩子函数
+&emsp;&emsp;我们在组件切换的时候,保存一些组件的状态防止多次渲染,通俗来说就是缓存组件,我们就可以使用 keep-alive 组件包裹对应组件,这个组件拥有两个自己的生命周期钩子函数,分别为 activated 和 deactivated,前者相当于 created,后者相当于 destoryed.如果我们想销毁被包裹的组件,使用 destory 不能被销毁的.我们需要在 deactiavted 钩子函数中调用对应的销毁组件的方法(vm.\$destroy()).命中缓存渲染后会触发 actived 钩子函数
 
 ## 5. COMPUTED 和 WATCH 的区别？
 
@@ -56,17 +60,19 @@
 
 &emsp;&emsp;不属于 vue 或者 react，是第三方的一个库，其内部的实现原理其实和自定义事件是差不多的，也是通过订阅和发布的机制来达到任意组件进行通信的效果
 
-&emsp;&emsp;也是在一个都能访问到的对象中,进行一些操作,将方法存储起来.最终进行实现数据传递
+&emsp;&emsp;也是在一个都能访问到的对象中,进行一些操作,将回调函数进行存储起来.最终调用实现数据传递
 
 #### 5.Vuex
 
-&emsp;&emsp;vuex 是一个集中式管理数据的一种通信手段，其内部有几大模块，分别是 actions,mutations,getters,state，actions 模块我们一般是用作发送异步请求，然后通过调用 commit(解构 context 获得)函数把请求回来的数据传递给 mutations 中的某一个函数，mutations 模块我们一般是用来直接修改 state 状态数据的，actions 模块中传递过来的数据我们在 mutations 模块中的某一个函数内部可以获取到，然后拿到 这个数据去替换掉 state 中的初始化数据就行了，getters 模块我们一般是用来 返回某个 state 中的数据的，也可以用来动态计算某一个数据进行返回，state 模块我们一般是用来定义初始化数据的，在组件内部我们可以通过 this.\$store.dispatch('某一个 action 函数的名字',数据(可选参数))触发 vuex 的更 新流程，然后通过辅助函数，比如：mapState(需要从 vuex 中单独引入才能使用) 来使用 vuex 中 state 的数据
+&emsp;&emsp;vuex 是为 Vue.js 专门开发的状态管理模式,是集中式管理数据的一种通信手段;
+
+&emsp;&emsp;其内部有几大模块，分别是 actions,mutations,getters,state,modules,actions 模块我们一般是用作发送异步请求，然后通过调用 commit(解构 context 获得)函数把请求回来的数据传递给 mutations 中的某一个函数，mutations 模块我们一般是用来直接修改 state 状态数据的，actions 模块中传递过来的数据我们在 mutations 模块中的某一个函数内部可以获取到，然后拿到 这个数据去替换掉 state 中的初始化数据就行了，getters 模块我们一般是用来 返回某个 state 中的数据的，也可以用来动态计算某一个数据进行返回，state 模块我们一般是用来定义初始化数据的，在组件内部我们可以通过 this.\$store.dispatch('某一个 action 函数的名字',数据(可选参数))触发 vuex 的更 新流程，然后通过辅助函数，比如：mapState(需要从 vuex 中单独引入才能使用) 来使用 vuex 中 state 的数据
 
 #### 6. .sync
 
 &emsp;&emsp;.sync 可以用来实现 子组件修改父组件的数据
 在父组件中通过 :属性名.sync = 数据
-然后在子组件中通过 \$emit(update:属性名,修改后的数据)来实现子组件修改 父组件的数据
+然后在子组件中通过 \$emit(update:属性名,修改后的数据)来实现子组件修改 父组件的数据([详情点击 sync](个人笔记/Vue/20后台管理系统第二天?id=-sync-修饰符.md))
 
 #### 7.作用域插槽
 
@@ -76,21 +82,23 @@
 
 #### $parent / $children;
 
-&emsp;&emsp;
+&emsp;&emsp;\$parent 在子组件中使用,可以获得唯一的父级组件实例对象,从而对父组件进行传参,或者操作
+
+&emsp;&emsp;\$children 在父组件中使用,可以获取直接的子组件数组,可以使用这个属性获取子组件的数据
+
+&emsp;&emsp;不推荐使用,这只是传递参数的一种应急做法
 
 #### $attrs / $listerens
 
-&emsp;&emsp;
+&emsp;&emsp;\$attrs 可以获取子父组件传递过来的所有属性,但是不包括 props 接收过的,style,class 这三种.如果传过来的是一个动态的对象(v-bind),在使用时,这个对象会被拆分为多个属性
 
-####
+&emsp;&emsp;\$listeners 可以获取父组件传递过来的自定义事件,但是不包括带.native 修饰符的事件
 
-- provide/inject
-- \$attrs;
-- $on / $listerens;
-- v-show/v-if
+#### provide/inject
+
+&emsp;&emsp;实现父子祖先子孙组件传递数据,provide 是数据的提供者,在父组件中使用.inject 在子孙组件中使用,使用方法和 props 类似
+
 - v-model
-  = v-bind
-  = \$event
 - .native
 - v-on
 - vm.\$set/Vue.set
@@ -131,9 +139,11 @@
 
 c: controller（控制器)传统的 MVC 架构通常是使用控制器更新模型，视图从模型中获取数据去渲染。当用户有输入时，会通过控制器去更新模型，并且通知视图进行更新。但是 MVC 有一个巨大的缺陷就是控制器承担的责任太大了，随着项目愈加复杂，控制器中的代码会越来越臃肿，导致出现不利于维护的情况。
 
+<a href="#/个人笔记/Vue/MVVM源码执行大概流程和小总结.md">MVVM 源码分析</a>
+
 ## 9. 路由的原理？
 
-&emsp;&emsp;通过 history 中的 pushState 和 replaceState 来实现，禁止 a 标签的默认行为,本质就是监听 URL 的变化，然后匹配路由规则，显示相应的页面，并且无须刷新页面。目前前端使用的路由就只有两种实现方式：
+&emsp;&emsp;通过 history 中的 pushState 和 replaceState 来实现，禁止 a 标签的默认行为,本质就是监听 URL 的变化，然后匹配路由规则，显示相应的页面,并且无须刷新页面。目前前端使用的路由就只有两种实现方式：
 
 - hash 模式
 - history 模式
@@ -160,14 +170,26 @@ c: controller（控制器)传统的 MVC 架构通常是使用控制器更新模�
 
 ## 13. VUE 路由间的参数传递？
 
--- 1. query 传递
+- 1. query 传递
+
+     -直接在 url 地址后进行拼接,以?开头,键=值的形式,多个以&分割
+
+     -以对象的形式进行拼接,对象需要 name(定义路由时的对应组件的 name 属性)或者 path(路由地址)中的一个,第二个参数是 query,值是一个对象
 
 - 2. params 传递
+
+     -直接在地址栏后面进行拼接,以\/的形式,\/后面跟一个参数,多个参数就使用多个\/,后面需要在定义路由组件时,使用占位符进行占位.
+
+     -以对象的形式进行传递,对象只能使用 name 属性,第二个参数是 params(对象),传递的参数不会在地址栏中进行拼接,但是只要一刷新页面,传递过来的参数就会消失
+
 - 3. props 传递
-     -- 1. 布尔模式
-     -- 2. 对象模式
-     -- 3. 函数模式
+     - 1. 布尔模式
+     - 2. 对象模式
+     - 3. 函数模式
+
 - 4.  meta 传递
+
+  <a href="#/个人笔记/React/5React第5天(Router)?id=react路由-理解">React 路由知识<a/>
 
 ## 14 VUE 中响应式原理？
 

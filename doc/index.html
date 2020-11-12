@@ -15,110 +15,13 @@
   <meta name="description" content="Description">
   <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css"> -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
   <link rel="icon" href="media/icon.svg">
-  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/buble.css"> -->
-  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/dark.css"> -->
-  <!-- <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/pure.css"> -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/dolphin.css">
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/buble.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/dark.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/pure.css"> -->
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/dolphin.css"> -->
   <style>
-    /* .sidebar {
-      padding-top: 0;
-    }
-
-    .search {
-      margin-bottom: 20px;
-      padding: 6px;
-      border-bottom: 1px solid #eee;
-    }
-
-    .search .input-wrap {
-      display: flex;
-      align-items: center;
-    }
-
-    .search .results-panel {
-      display: none;
-    }
-
-    .search .results-panel.show {
-      display: block;
-    }
-
-    .search input {
-      outline: none;
-      border: none;
-      width: 100%;
-      padding: 0 7px;
-      line-height: 36px;
-      font-size: 14px;
-      border: 1px solid transparent;
-    }
-
-    .search input:focus {
-      box-shadow: 0 0 5px var(--theme-color, #42b983);
-      border: 1px solid var(--theme-color, #42b983);
-    }
-
-    .search input::-webkit-search-decoration,
-    .search input::-webkit-search-cancel-button,
-    .search input {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-    }
-
-    .search .clear-button {
-      cursor: pointer;
-      width: 36px;
-      text-align: right;
-      display: none;
-    }
-
-    .search .clear-button.show {
-      display: block;
-    }
-
-    .search .clear-button svg {
-      transform: scale(.5);
-    }
-
-    .search h2 {
-      font-size: 17px;
-      margin: 10px 0;
-    }
-
-    .search a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .search .matching-post {
-      border-bottom: 1px solid #eee;
-    }
-
-    .search .matching-post:last-child {
-      border-bottom: 0;
-    }
-
-    .search p {
-      font-size: 14px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-    }
-
-    .search p.empty {
-      text-align: center;
-    }
-
-    .app-name.hide,
-    .sidebar-nav.hide {
-      display: none;
-    } */
-
     /* 侧边栏一级标题 */
     .sidebar-nav>ul>li>p {
       font-size: 22px;
@@ -154,8 +57,20 @@
       margin-left: 40PX;
     }
 
-    .ready section.cover {
+    /* .ready section.cover {
       padding-left: 100px;
+    } */
+
+    h6 a {
+      text-decoration: none;
+    }
+
+    /* 设置代码的样式 */
+    .markdown-section pre>code {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 30px;
+      /* height: 20px; */
     }
   </style>
 </head>
@@ -165,22 +80,10 @@
     <a href="#/">EN</a>
     <a href="#/zh-cn/">中文</a>
   </nav> -->
-  <div id="app">Please Wait...</div>
-  <button>黑暗白夜</button>
+  <!-- <div id="app">Please Wait...</div> -->
+  <div id="app"><img src="https://wimg.588ku.com/gif620/19/09/07/b99d2cd06a8e4a9e961c0ee89a0b41e1.gif" width="200"
+      height="200" alt=""></div>
 
-  <!-- <script>
-    window.$docsify = {
-      name: '小周文档',
-      repo: '小周文档',
-      loadSidebar: true,//定制自己的侧边栏
-      // 嵌套侧边栏
-      alias: {
-        '/.*/_sidebar.md': '/_sidebar.md'
-      },
-      coverpage: true,//开启封面渲染的功能,
-      maxLevel: 4,//支持4级渲染的标题层级
-    }
-  </script> -->
   <!-- 引入配置文件 -->
   <script src="./config.js"></script>
   <!-- 引入vue -->
@@ -200,6 +103,7 @@
   </script>
   <!-- 引入自己写入的一些操作 -->
   <script src='./index.js'></script>
+
 </body>
 
 </html>

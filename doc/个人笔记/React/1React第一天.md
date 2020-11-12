@@ -50,7 +50,7 @@
 - 一般用来定义简单组件
 - 1 定义一个构造函数,返回一个根标签包裹的虚拟DOM
 
-	- function MyComponent(){ return  <h1>这是工厂函数定义的简单组件 </h1>
+	- function MyComponent(){ return  \<h1>这是工厂函数定义的简单组件 \</h1>
 
 - 2 使用ReactDOM.render方法,将其渲染到对应的文档中
 
@@ -63,7 +63,7 @@
 - 一般用来定义复杂组件
 - 1 定义一个类并且该类继承React.Component方法,其中定义一个render方法,该方法是作为实例使用的
 
-	- class MyComponent1 extends React.Component{  render( ){ return <h1>这是ES6类创建的组件</h1>}}
+	- class MyComponent1 extends React.Component{  render( ){ return \<h1>这是ES6类创建的组件/</h1>}}
 
 - 2 使用ReactDOM.render方法,将其渲染到对应的文档中
 
